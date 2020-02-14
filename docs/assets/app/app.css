@@ -50,7 +50,7 @@ code {
 #view {
     position: fixed;
     width: 100vw;
-    height: 100vh;
+    height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,6 +67,7 @@ code {
 }
 
 #view.full {
+    margin-top: 25vh;
     box-shadow: 0 0 0 2000px #fff;
 }
 
@@ -145,6 +146,10 @@ code {
 
 .progress-list .angular div {
     background: rgb(165, 13, 13);
+}
+
+.progress-list .angular-material div {
+    background: #3f51b5;
 }
 
 .progress-list .bootstrap div {
