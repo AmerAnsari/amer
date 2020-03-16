@@ -104,6 +104,10 @@ code {
 
 /* Progress list */
 
+.progress-list {
+    margin-bottom: 60px;
+}
+
 .progress-list .title,
 .connect .title {
     text-align: center;
