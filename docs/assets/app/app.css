@@ -101,6 +101,20 @@ code {
     margin-top: 10px;
 }
 
+/* Button */
+
+.btn-dark {
+    background: #111;
+    border-color: #222;
+    color: #888;
+    border-radius: 1000px;
+  }
+  
+  .btn-dark:hover {
+    background: #333;
+    border-color: #333;
+    color: #DDD;
+  }
 
 /* Progress list */
 
