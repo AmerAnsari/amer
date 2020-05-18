@@ -16,17 +16,19 @@ $(document).ready(function () {
   /**
    * Api call
    */
-  const request = new XMLHttpRequest()
-  request.open('POST', 'https://amer-js.herokuapp.com/hello', true)
-  request.onload = function() {
-    // Begin accessing JSON data here
-    if (request.status >= 200 && request.status < 400) {
-      console.log('Api was called :)');
-    } else {
-      console.log(`Gah, it's not working!`);
+  const http = new XMLHttpRequest();
+  const url = 'https://amer-js.herokuapp.com/hello';
+  http.open('POST', url, true);
+
+//Send the proper header information along with the request
+  http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+  http.onreadystatechange = function() {//Call a function when the state changes.
+    if(http.readyState === 4 && http.status === 200) {
+      alert(http.responseText);
     }
   }
-  request.send()
+  http.send();
 
 
   console.info('Nothing here except your legend...');
