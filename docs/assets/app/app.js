@@ -20,25 +20,20 @@ $(document).ready(function () {
 /**
  * Do something on page load
  */
-window.addEventListener("load", apicall());
+window.addEventListener("load", apiCall());
+
 /**
  * Api call
  */
-function apicall() {
-  const http = new XMLHttpRequest();
+function apiCall() {
   const url = 'https://amer-js.herokuapp.com/hello';
-  http.open('POST', url, true);
+  const data = 'Hey Amer, I`ve viewed your website, Yohooo';
 
-//Send the proper header information along with the request
-  http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-  http.onreadystatechange = function() {    //Call a function when the state changes.
-    if(http.readyState === 4 && http.status === 200) {
-      alert(http.responseText);
-      console.log("Api was called!");
-    } else {
-      console.log("Gah, api is not working!!");
-    }
-  }
-  http.send();
+  axios({
+    method: 'post',
+    url: url,
+    data: data,
+  })
+      .then(data => console.log(data))
+      .catch(err => console.log(err));
 }
