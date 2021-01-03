@@ -1,0 +1,29 @@
+{
+  "name": "amer",
+  "version": "1.0.0",
+  "description": "Amer Ansari's website",
+  "repository": "https://github.com/AmerAnsari/amer",
+  "license": "MIT",
+  "scripts": {
+    "serve": "gulp serve",
+    "build": "gulp build",
+    "deploy": "gulp deploy",
+    "clean": "gulp clean"
+  },
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-connect": "^5.7.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-file": "^0.4.0",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify-es": "^2.0.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "bootstrap-sass": "^3.4.1",
+    "jquery": "^3.4.1"
+  }
+}
