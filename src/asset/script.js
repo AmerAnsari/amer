@@ -20,20 +20,20 @@ $(document).ready(function () {
 /**
  * Do something on page load
  */
-// window.addEventListener("load", apiCall());
+window.addEventListener("load", apiCall());
 
 /**
  * Api call
  */
-// function apiCall() {
-//
-//   const url = 'https://amer-js.herokuapp.com/hello';
-//   const data = 'Hey Amer, I`ve viewed your website, Yohooo';
-//   axios({
-//     method: 'post',
-//     url: url,
-//     data: data,
-//   })
-//       .then(data => console.log(data))
-//       .catch(err => console.log(err));
-// }
+function apiCall() {
+
+  const url = 'https://amer-js.herokuapp.com/hello';
+  const data = 'Hey Amer, I`ve viewed your website, Yohooo';
+  axios({
+    method: 'post',
+    url: url,
+    data: data,
+  })
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+}
