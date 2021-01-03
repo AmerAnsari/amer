@@ -13,7 +13,7 @@ const ghpages = require('gulp-gh-pages');
 // CLEAN
 
 gulp.task('clean', () => {
-  return del(['dist', 'serve', 'deploy']);
+  return del(['docs', 'serve', 'deploy']);
 });
 
 // BUILD
@@ -30,12 +30,12 @@ gulp.task('build:styles', () => {
     // Minify the file
     .pipe(csso())
     // Output
-    .pipe(gulp.dest('dist/asset'));
+    .pipe(gulp.dest('docs/asset'));
 });
 
 gulp.task('build:copy', () => {
-  gulp.src('node_modules/jquery/dist/jquery.js').pipe(gulp.dest('dist'))
-  return gulp.src('node_modules/@fortawesome/fontawesome-free/webfonts/**/*').pipe(gulp.dest('dist/webfonts/'));
+  gulp.src('node_modules/jquery/dist/jquery.js').pipe(gulp.dest('docs'))
+  return gulp.src('node_modules/@fortawesome/fontawesome-free/webfonts/**/*').pipe(gulp.dest('docs/webfonts/'));
 });
 
 gulp.task('build:scripts', () => {
@@ -43,7 +43,7 @@ gulp.task('build:scripts', () => {
     // Minify the file
     .pipe(uglify())
     // Output
-    .pipe(gulp.dest('dist/asset'));
+    .pipe(gulp.dest('docs/asset'));
 });
 
 gulp.task('build:html', () => {
@@ -52,11 +52,11 @@ gulp.task('build:html', () => {
       collapseWhitespace: true,
       removeComments: true,
     }))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('docs'));
 });
 
 gulp.task('build:images', () => {
-  return gulp.src(['src/asset/logo/**/*']).pipe(gulp.dest('dist/asset/logo'));
+  return gulp.src(['src/asset/logo/**/*']).pipe(gulp.dest('docs/asset/logo'));
 });
 
 gulp.task('build', gulp.series('clean', 'build:styles', 'build:scripts', 'build:html', 'build:copy', 'build:images'));
@@ -100,11 +100,11 @@ gulp.task('serve', gulp.series('clean', 'serve:copy', 'serve:styles', 'serve:rel
 // DEPLOY
 
 gulp.task('deploy:clean', gulp.series('build', () => {
-  return gulp.src('dist/**/*').pipe(ghpages());
+  return gulp.src('docs/**/*').pipe(ghpages());
 }));
 
 gulp.task('deploy', gulp.series('build', () => {
-  return gulp.src('dist/**/*')
+  return gulp.src('docs/**/*')
     .pipe(file('CNAME', 'amer.savandbros.com'))
     .pipe(ghpages({
       cacheDir: 'deploy',

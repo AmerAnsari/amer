@@ -1,0 +1,1 @@
+$(document).on("ready scroll",(function(){window.scrollY>10?$("#view").removeClass("full"):$("#view").addClass("full")})),$(document).ready((function(){console.info("Nothing here except your legend..."),$("#year").text((new Date).getFullYear())}));
