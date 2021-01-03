@@ -55,7 +55,6 @@ code {
 /* View */
 
 #view {
-    position: fixed;
     width: 100vw;
     height: 40vh;
     display: flex;
@@ -187,6 +186,22 @@ code {
 
 .progress-list .javascript div {
     background: #FD0;
+}
+
+.progress-list .python div {
+    background: #3572A5;
+}
+
+.progress-list .django div {
+    background: #0C4B33;
+}
+
+.progress-list .drf div {
+    background: #A30000;
+}
+
+.progress-list .c-sharp div {
+    background: #7b3399;
 }
 
 
