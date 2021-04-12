@@ -29,11 +29,14 @@ function apiCall() {
 
   const url = 'https://amer-js.herokuapp.com/hello';
   const data = 'Hey Amer, I`ve viewed your website, Yohooo';
-  axios({
-    method: 'post',
-    url: url,
-    data: data,
-  })
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
+  // axios({
+  //   method: 'post',
+  //   url: url,
+  //   data: data,
+  // })
+  //   .then(data => console.log(data))
+  //   .catch(err => console.log(err));
+  const http = new XMLHttpRequest();
+  http.open('POST', url, true, data);
+  http.send();
 }
