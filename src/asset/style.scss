@@ -168,40 +168,16 @@ code {
     height: 3px;
 }
 
-.progress-list .angular div {
-    background: rgb(165, 13, 13);
+.progress-list .green .bar div {
+    background: #0f6;
 }
 
-.progress-list .angular-material div {
-    background: #3f51b5;
+.progress-list .yellow .bar div {
+  background: #fd0;
 }
 
-.progress-list .bootstrap div {
-    background: #609;
-}
-
-.progress-list .jquery div {
-    background: rgb(9, 9, 201);
-}
-
-.progress-list .javascript div {
-    background: #FD0;
-}
-
-.progress-list .python div {
-    background: #3572A5;
-}
-
-.progress-list .django div {
-    background: #0C4B33;
-}
-
-.progress-list .drf div {
-    background: #A30000;
-}
-
-.progress-list .c-sharp div {
-    background: #7b3399;
+.progress-list .blue .bar div {
+  background: #3498db;
 }
 
 
@@ -244,7 +220,7 @@ code {
     padding-top: 30px;
 }
 
-.connect-item .fa:first,
+.connect-item .fa:first-child,
 .connect-item .fa:nth-of-type(4) {
     background: #353535;
 }
