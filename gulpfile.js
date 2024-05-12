@@ -5,7 +5,7 @@ const del = require('del');
 const file = require('gulp-file');
 const gulp = require('gulp');
 const htmlmin = require('gulp-htmlmin');
-const sass = require('gulp-sass');
+const sass =  require('gulp-sass')(require('sass'));
 const uglify = require('gulp-uglify-es').default;
 const connect = require('gulp-connect');
 const ghpages = require('gulp-gh-pages');
@@ -22,7 +22,7 @@ gulp.task('build:styles', () => {
   return gulp.src('src/asset/**/*.scss')
     // Compile SASS files
     .pipe(sass({
-      outputStyle: 'nested',
+      outputStyle: 'expanded',
       precision: 10,
       includePaths: ['.'],
       onError: console.error.bind(console, 'Sass error:'),
@@ -66,7 +66,7 @@ gulp.task('build', gulp.series('clean', 'build:styles', 'build:scripts', 'build:
 gulp.task('serve:styles', () => {
   gulp.src('src/asset/style.scss')
     .pipe(sass({
-      outputStyle: 'nested',
+      outputStyle: 'expanded',
       precision: 10,
       includePaths: ['.'],
       onError: console.error.bind(console, 'Sass error:'),

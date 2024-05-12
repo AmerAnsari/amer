@@ -9,167 +9,182 @@
 
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar {
-    background: #212121;
+  background: #212121;
 }
 
 ::-webkit-scrollbar {
-    width: 6px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #111;
+  background: #111;
 }
 
 body {
-    font-family: "Ubuntu Condensed", sans-serif;
-    background: #212121;
-    color: #666;
+  font-family: "Ubuntu Condensed", sans-serif;
+  background: #212121;
+  color: #666;
 }
 
 code {
-    font-family: "Ubuntu Mono", monospace;
+  font-family: "Ubuntu Mono", monospace;
 }
 
 
 /* Containers */
 
 .container.space {
-    margin-top: 70px;
-    margin-bottom: 70px;
+  margin-top: 70px;
+  margin-bottom: 70px;
 }
 
 .page-title {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin: 0;
-    text-align: center;
-    text-transform: uppercase;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-.bg-1,
 .page-title {
-    background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.15);
 }
 
 
 /* View */
 
 #view {
-    width: 100%;
-    height: 40vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Ubuntu Mono", monospace;
-    font-size: 18px;
-    color: rgb(17, 15, 15);
-    background: #fff;
-    box-shadow: 0 0 0 0 #fff;
-    transition: all 0.3s;
-    z-index: 2;
-    position: relative;
-    line-height: 30px;
-    padding: 30px 10px;
-}
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Ubuntu Mono", monospace;
+  color: rgb(17, 15, 15);
+  box-shadow: 0 0 0 0 #212121;
+  transition: all 0.3s;
+  z-index: 2;
+  position: relative;
+  line-height: 30px;
+  padding: 30px 10px;
 
-#view.full {
+  &.full {
     margin-top: 25vh;
-    box-shadow: 0 0 0 2000px #fff;
+    box-shadow: 0 0 0 2000px #212121;
+  }
+
+  &:not(.full) {
+    height: 0;
+    opacity: 0;
+  }
+
+  .title {
+    font-size: clamp(0rem, 20vw, 30vh);
+  }
 }
 
 @media (min-width: 768px) {
-    #view {
-        font-size: 28px;
-        padding: 80px;
-    }
+  #view {
+    font-size: 28px;
+    padding: 80px;
+  }
 }
 
 
 /* Introduction */
 
 #introduction {
-    color: #ddd;
+  color: #ddd;
+}
+
+.mask {
+  font-weight: bold;
+  background-image: url('logo/wallpaper.jpg');
+  background-size: cover;
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
 }
 
 #introduction .title {
-    font-size: 5em;
-    letter-spacing: 5px;
+  font-size: 5em;
+  letter-spacing: 5px;
 }
 
 #introduction .subtitle {
-    font-size: 2em;
-    opacity: 0.6;
+  font-size: 2em;
+  opacity: 0.6;
 }
 
 #introduction .secret {
-    font-size: 1.2em;
-    opacity: 0.4;
-    margin-top: 10px;
+  font-size: 1.2em;
+  opacity: 0.4;
+  margin-top: 10px;
 }
 
 /* Button */
 
 .btn-dark {
-    background: #111;
-    border-color: #222;
-    color: #888;
-    border-radius: 1000px;
-  }
-  
-  .btn-dark:hover {
-    background: #333;
-    border-color: #333;
-    color: #DDD;
-  }
+  background: #111;
+  border-color: #222;
+  color: #888;
+  border-radius: 1000px;
+}
+
+.btn-dark:hover {
+  background: #333;
+  border-color: #333;
+  color: #DDD;
+}
 
 /* Progress list */
 
 .progress-list {
-    margin-bottom: 60px;
+  margin-bottom: 60px;
 }
 
 .progress-list .title,
 .connect .title {
-    text-align: center;
-    font-size: 21px;
-    text-transform: uppercase;
-    padding-bottom: 6px;
-    border-bottom: 2px solid #333;
-    margin-bottom: 10px;
+  text-align: center;
+  font-size: 21px;
+  text-transform: uppercase;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #333;
+  margin-bottom: 10px;
 }
 
 .progress-list .subtitle {
-    text-align: left;
-    font-size: 16px;
-    border: 0;
-    text-transform: uppercase;
-    margin-top: 20px;
+  text-align: left;
+  font-size: 16px;
+  border: 0;
+  text-transform: uppercase;
+  margin-top: 20px;
 }
 
 .progress-list .item {
-    padding: 6px 0;
-    font-size: 18px;
-    color: #aaa;
+  padding: 6px 0;
+  font-size: 18px;
+  color: #aaa;
 }
 
 .progress-list small {
-    float: right;
-    color: #666;
+  float: right;
+  color: #666;
 }
 
 .progress-list .bar {
-    background: #292929;
-    margin-top: 6px;
-    border-radius: 3px;
-    overflow: hidden;
+  background: #292929;
+  margin-top: 6px;
+  border-radius: 3px;
+  overflow: hidden;
 }
 
 .progress-list .bar div {
-    height: 3px;
+  height: 3px;
 }
 
 .progress-list .green .bar div {
-    background: #0f6;
+  background: #0f6;
 }
 
 .progress-list .yellow .bar div {
@@ -184,114 +199,114 @@ code {
 /* Connect */
 
 .connect-item {
-    color: #666;
+  color: #666;
 }
 
 .connect-item:first-of-type .caption {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .connect-item:hover,
 .connect-item:focus {
-    text-decoration: none;
-    color: #eee;
+  text-decoration: none;
+  color: #eee;
 }
 
 .connect-item:nth-of-type(1),
 .connect-item:nth-of-type(3) {
-    padding-right: 5px;
+  padding-right: 5px;
 }
 
 .connect-item:nth-of-type(2),
 .connect-item:nth-of-type(4) {
-    padding-left: 5px;
+  padding-left: 5px;
 }
 
 .connect-item > * {
-    transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .connect-item .fa, .fab {
-    background: #252525;
-    width: 100%;
-    height: 165px;
-    text-align: center;
-    font-size: 5em;
-    padding-top: 30px;
+  background: #252525;
+  width: 100%;
+  height: 165px;
+  text-align: center;
+  font-size: 5em;
+  padding-top: 30px;
 }
 
 .connect-item .fa:first-child,
 .connect-item .fa:nth-of-type(4) {
-    background: #353535;
+  background: #353535;
 }
 
 .connect-item .caption {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.01);
-    display: block;
-    padding: 10px;
-    text-align: center;
-    margin-top: -42px;
-    z-index: 1;
-    position: relative;
-    margin-bottom: 10px;
-    font-size: 16px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.01);
+  display: block;
+  padding: 10px;
+  text-align: center;
+  margin-top: -42px;
+  z-index: 1;
+  position: relative;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 
 .connect-item:hover .caption {
-    color: tomato;
+  color: tomato;
 }
 
 
 /* Projects */
 
 .project {
-    padding-bottom: 30px;
+  padding-bottom: 30px;
 }
 
 .project img {
-    opacity: 0.3;
-    transition: all 0.2s ease-in-out;
-    border-radius: 10000px;
-    padding: 6px;
-    border: 2px solid #444;
-    width: 122px;
-    filter: grayscale(0.8);
+  opacity: 0.3;
+  transition: all 0.2s ease-in-out;
+  border-radius: 10000px;
+  padding: 6px;
+  border: 2px solid #444;
+  width: 122px;
+  filter: grayscale(0.8);
 }
 
 .project:hover img {
-    opacity: 1;
-    filter: grayscale(0);
+  opacity: 1;
+  filter: grayscale(0);
 }
 
 .project .media-body {
-    padding: 10px;
-    padding-left: 15px;
+  padding: 10px;
+  padding-left: 15px;
 }
 
 .project .media-heading {
-    color: #aaa;
-    margin-bottom: 15px;
-    transition: all 0.2s ease-in-out;
+  color: #aaa;
+  margin-bottom: 15px;
+  transition: all 0.2s ease-in-out;
 }
 
 .project:hover .media-heading {
-    color: #fff;
+  color: #fff;
 }
 
 .project p {
-    margin: 0;
-    font-size: large;
+  margin: 0;
+  font-size: large;
 }
 
 
 /* Footer */
 
 #footer {
-    padding: 30px 0;
-    background: rgba(0, 0, 0, 0.15);
+  padding: 30px 0;
+  background: rgba(0, 0, 0, 0.15);
 }
 
 #footer p {
-    margin: 0;
+  margin: 0;
 }
